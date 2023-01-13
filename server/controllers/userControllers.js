@@ -2,6 +2,9 @@ const { UserModel } = require("../models/user.model");
 const bcrypt = require("bcryptjs");
 const { hashPassword, checkPassword } = require("../utlis/password");
 const { generateToken } = require("../utlis/generateToken");
+
+
+
 const userCreate = async (req, res) => {
   try {
     let { name, email, password, dob } = req.body;
@@ -23,6 +26,8 @@ const userCreate = async (req, res) => {
     });
   }
 };
+
+
 
 const login = async (req, res) => {
   try {
@@ -58,7 +63,10 @@ const login = async (req, res) => {
   }
 };
 
+
+
+
 module.exports = {
   userCreate,
-  login,
+  login
 };
