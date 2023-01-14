@@ -1,8 +1,6 @@
 <br/>
 <p align="center">
-  <a href="https://github.com/ShaanCoding/ReadME-Generator">
-    <img src="images/logo.png" alt="Logo" width="80" height="80">
-  </a>
+ 
 
   <h3 align="center">ReadME Generator</h3>
 
@@ -26,7 +24,9 @@ git clone https://github.com/your_username_/Project-Name.git
 
 2. Install NPM packages
 
-```sh
+move to server folder then type
+
+```
 npm install
 ```
 
@@ -34,39 +34,40 @@ npm install
 
 ## Usage
 
-1. create_user:
-    input:
+1. create_user:  <br/>
+    input: 
            a.name
            b. email
            c. password
            d. dob
+           <br/>
      response: user object only
      (no token generate in create user)
+      <br/>
      
- 2.Login: 
+ 2. Login:  <br/>
          input:
            a. email,
-           b. password
+           b. password  <br/>
         response: user-object and token
+         <br/>
 
-3. Get all user
-     headers: token must be pass to headers to get the data
+3. Get all user  <br/>
+     headers: token must be pass to headers to get the data  <br/>
      routes: /userdata
+      <br/>
 
-4. Get user by id:
-     headers: token must be pass to headers to get the data
+4. Get user by id:  <br/>
+     headers: token must be pass to headers to get the data  <br/>
      routes: /userdata?_id
+      <br/>
 
-5. Delete user by id:
-     headers: token must be pass to headers to get the delete the data
+5. Delete user by id:  <br/>
+     headers: token must be pass to headers to get the delete the data <br/>
      routes: /userdata/delete/:_id
+      <br/>
 
 
 
 
 
-## Acknowledgements
-
-* [ShaanCoding](https://github.com/ShaanCoding/)
-* [Othneil Drew](https://github.com/othneildrew/Best-README-Template)
-* [ImgShields](https://shields.io/)
