@@ -1,7 +1,7 @@
 const errorHandle = (req, res, next) => {
   try {
     let { name, email, password, dob } = req.body;
-    console.log(password);
+    // console.log(password);
     if (!name || !email || !password || !dob) {
       return res.status(400).send({ Error: "Please fill all the input" });
     }
