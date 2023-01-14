@@ -35,7 +35,7 @@ const login = async (req, res) => {
     let findUser = await UserModel.findOne({ email }).select("-__v");
 
     //if email not registered
-    console.log(findUser);
+    // console.log(findUser);
     if (!findUser) {
       return res.status(400).send({ Error: "Email not registered" });
     }

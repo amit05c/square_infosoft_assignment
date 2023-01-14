@@ -1,11 +1,12 @@
 const express= require("express")
-const { getUsers } = require("../controllers/dataControllers")
+const { getUsers, deleteUser } = require("../controllers/dataControllers")
 
 const dataRouter= express.Router()
 
 dataRouter.route("/")
 .get(getUsers)
-// .delete()
+dataRouter.route("/delete/:_id")
+.delete(deleteUser)
 
 
 module.exports={

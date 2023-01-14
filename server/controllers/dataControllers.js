@@ -6,8 +6,8 @@ const getUsers= async (req,res)=>{
      let queryObj={...req.query}
      let excludedFields= ['page','limit']
      excludedFields.forEach(el=>delete queryObj[el])
-     console.log(queryObj)
-     let findUsers = await UserModel.find(queryObj).select("-__v");
+    //  console.log(queryObj)
+     let findUsers = await UserModel.find(queryObj).select("-password -__v");
      res.status(201).json({
         status: "success",
         data: {
@@ -24,8 +24,18 @@ const getUsers= async (req,res)=>{
 }
 
 const deleteUser= async (req,res)=>{
-    
+    try{
+      let {_id}= req.params
+      // console.log(_id)
+      await UserModel.findByIdAndDelete(_id)
+      res.status(201).json({
+        status: "success"
+      });
+    }catch(err){
+          
+    }
 }
 module.exports = {
-    getUsers
+    getUsers,
+    deleteUser
   };

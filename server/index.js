@@ -2,6 +2,7 @@ const express= require("express")
 const { connection } = require("./config/db")
 const { userRouter } = require("./routes/userRouter")
 const { dataRouter } = require("./routes/dataRoutes")
+const { Authentication } = require("./authentication/userAuth")
 const app=express()
 app.use(express.json())
 const PORT= process.env.PORT || 8080
@@ -10,7 +11,7 @@ app.get("/",(req,res)=>{
     res.send("Welcome to square_infosoft ")
 })
 app.use("/user",userRouter)
-app.use("/userdata",dataRouter)
+app.use("/userdata",Authentication,dataRouter)
 
 app.get("*",(req,res)=>{
     res.status(400).json({
