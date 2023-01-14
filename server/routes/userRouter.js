@@ -1,6 +1,6 @@
 const express= require("express")
 const { userCreate, login, getUsers } = require("../controllers/userControllers")
-const { errorHandle } = require("../../Error-handleing-middleware/errorHandle")
+const { errorHandle } = require("../Error-handleing-middleware/errorHandle")
 
 
 const userRouter= express.Router()
